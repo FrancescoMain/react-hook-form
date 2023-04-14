@@ -1,6 +1,6 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { IFormInput } from "./type";
-import { UiInput } from "../Ui/UiInput/UiInput";
+import { UiInput } from "../../components/Ui/UiInput/UiInput";
 
 export default function App() {
   const {

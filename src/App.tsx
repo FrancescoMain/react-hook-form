@@ -1,9 +1,13 @@
-import Form from "./components/Form/Form";
+import Header from "./components/Header/Header";
+import Form from "./pages/Form/Form";
 
 export default function App() {
   return (
-    <div>
-      <Form />
-    </div>
+    <>
+      <Header />
+      <div>
+        <Form />
+      </div>
+    </>
   );
 }
