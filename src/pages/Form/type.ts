@@ -5,8 +5,9 @@ enum GenderEnum {
   }
   
 export  interface IFormInput {
-    firstName: String;
+    fullName: String;
     lastName: String
-    gender: GenderEnum;
+    dateOfBirth: number;
+    gender: number
     
   }

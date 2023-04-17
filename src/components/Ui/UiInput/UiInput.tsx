@@ -1,3 +1,4 @@
+import { Container, Input, P } from "./style";
 import { UiInputProps } from "./type";
 
 export const UiInput = ({
@@ -8,23 +9,25 @@ export const UiInput = ({
   errors,
 }: UiInputProps) => {
   return (
-    <div>
+    <Container>
       <label htmlFor={id} className="block text-sm font-medium text-gray-700">
         {label}
       </label>
-      <input id={id} type="text" {...register} />
-      {errors?.type === "required" && (
-        <p role="alert">{errorMessage?.required}</p>
-      )}
-      {errors?.type === "minLength" && (
-        <p role="alert">{errorMessage?.minLength} </p>
-      )}
-      {errors?.type === "maxLength" && (
-        <p role="alert">{errorMessage?.maxLength} </p>
-      )}
-      {errors?.type === "pattern" && (
-        <p role="alert">{errorMessage?.pattern} </p>
-      )}
-    </div>
+      <Input id={id} type="text" {...register} placeholder={label} />
+      <div>
+        {errors?.type === "required" && (
+          <P role="alert">{errorMessage?.required}</P>
+        )}
+        {errors?.type === "minLength" && (
+          <P role="alert">{errorMessage?.minLength} </P>
+        )}
+        {errors?.type === "maxLength" && (
+          <P role="alert">{errorMessage?.maxLength} </P>
+        )}
+        {errors?.type === "pattern" && (
+          <P role="alert">{errorMessage?.pattern} </P>
+        )}
+      </div>
+    </Container>
   );
 };
