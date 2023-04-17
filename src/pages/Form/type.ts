@@ -9,5 +9,6 @@ export  interface IFormInput {
     lastName: String
     dateOfBirth: number;
     gender: number
+    nationality: string
     
   }

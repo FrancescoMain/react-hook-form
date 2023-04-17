@@ -1,5 +1,6 @@
+import { Label } from "../UiSelect/style";
 import { Container, Input, P } from "./style";
-import { UiInputProps } from "../UiInput/type";
+import { UiDateProps } from "./type";
 
 export const UiDateInput = ({
   register,
@@ -7,16 +8,19 @@ export const UiDateInput = ({
   id,
   label,
   errors,
-}: UiInputProps) => {
+}: UiDateProps) => {
   return (
     <Container>
-      <label htmlFor={id} className="block text-sm font-medium text-gray-700">
+      <Label htmlFor={id} className="block text-sm font-medium text-gray-700">
         {label}
-      </label>
+      </Label>
       <Input id={id} type="date" {...register} placeholder={label} />
       <div>
         {errors?.type === "required" && (
           <P role="alert">{errorMessage?.required}</P>
+        )}
+        {errors?.type === "pattern" && (
+          <P role="alert">{errorMessage?.pattern}</P>
         )}
       </div>
     </Container>

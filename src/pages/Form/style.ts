@@ -21,7 +21,7 @@ export const Container = styled.div`
 
 export const Box = styled.div`
     display: flex;
-    width: 60%;
+    width: 70%;
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;

@@ -5,6 +5,8 @@ import { Container, Main, Box } from "./style";
 import { UiDateInput } from "../../components/Ui/UiDateInput/UiDateInput";
 import UiGroupRadio from "../../components/Ui/UiRadioGroup/UiGroupRadio";
 import { uiGroupRadioValues } from "../../components/Ui/UiRadioGroup/lib";
+import UiSelect from "../../components/Ui/UiSelect/UiSelect";
+import { selectValues } from "../../components/Ui/UiSelect/lib";
 
 export default function App() {
   const {
@@ -43,8 +45,15 @@ export default function App() {
             />
             <UiDateInput
               errors={errors.dateOfBirth}
-              register={register("dateOfBirth", { required: true })}
-              errorMessage={{ required: "Questo campo è richiesto" }}
+              register={register("dateOfBirth", {
+                required: true,
+                pattern:
+                  /(?<!\d)(?:(?:(?:1[6-9]|[2-9]\d)?\d{2})(?:(?:(?:0[13578]|1[02])31)|(?:(?:0[1,3-9]|1[0-2])(?:29|30)))|(?:(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00)))0229)|(?:(?:1[6-9]|[2-9]\d)?\d{2})(?:(?:0?[1-9])|(?:1[0-2]))(?:0?[1-9]|1\d|2[0-8]))(?!\d)/,
+              })}
+              errorMessage={{
+                required: "Questo campo è richiesto",
+                pattern: "La data non è valida",
+              }}
               label="Date Of Birth"
               id="dateOfBirth"
             />
@@ -54,20 +63,18 @@ export default function App() {
               values={uiGroupRadioValues}
               name={"Gender"}
             />
+            <UiSelect
+              register={register("nationality")}
+              defaultValue={2}
+              label="Nationality"
+              id="nationality"
+              values={selectValues}
+            />
           </Box>
 
           <input type="submit" />
         </form>
       </Container>
     </Main>
-
-    //
-    //
-    //
-    //   <select {...register("gender")}>
-    //     <option value="female">female</option>
-    //     <option value="male">male</option>
-    //     <option value="other">other</option>
-    //   </select>
   );
 }

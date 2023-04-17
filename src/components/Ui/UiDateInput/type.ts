@@ -13,9 +13,10 @@ interface errorMessage {
     required?: string
     minLength?: string
     maxLength?: string
+    valueAsDate?: string
 }    
 
-export interface UiInputProps {
+export interface UiDateProps {
     register: UseFormRegisterReturn<string>
     errors:  Merge<FieldError, FieldErrorsImpl<error>> | undefined
     label: string,
