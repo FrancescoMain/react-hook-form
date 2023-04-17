@@ -19,9 +19,23 @@ export const Container = styled.div`
 
 `;
 
+export const Wrap = styled.div`
+    display: flex;
+
+`;
+
 export const Box = styled.div`
     display: flex;
     width: 70%;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+`;
+
+export const Side = styled.div`
+    display: flex;
+    width: 20%;
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;

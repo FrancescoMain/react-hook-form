@@ -1,14 +1,9 @@
-enum GenderEnum {
-    female = "female",
-    male = "male",
-    other = "other"
-  }
-  
-export  interface IFormInput {
+  export  interface IFormInput {
     fullName: String;
     lastName: String
     dateOfBirth: number;
     gender: number
     nationality: string
+    image: any
     
   }
